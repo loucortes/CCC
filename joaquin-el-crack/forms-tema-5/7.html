@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <fieldset>
+            <legend>Complete</legend>
+            <label for="color">Elija un color: </label>
+            <input type="color" name="color" id="color">
+
+            <br>
+
+            <textarea name="justification" id="justification" cols="50" rows="5"
+                placeholder="Por favor, justifique su elección"></textarea>
+
+            <br><br>
+
+            <label for="program">Lenguaje de programación:</label>
+            <select name="program" id="program">
+                <option value="java">Java</option>
+                <option value="python">Python</option>
+                <option value="js">JavaScript</option>
+                <option value="php">PHP</option>
+                <option value="sql">SQL</option>
+                <option value="c">C</option>
+            </select>
+
+            <br><br>
+
+            <label for="ciclo">Seleccione su ciclo formativo: </label>
+            <label for="asir"><input type="checkbox" name="asir" id="asir">ASIR</label>
+            <label for="dam"><input type="checkbox" name="dam" id="dam">DAM</label>
+            <label for="daw"><input type="checkbox" name="daw" id="daw">DAW</label>
+            <label for="smr"><input type="checkbox" name="smr" id="smr">SMR</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Rellene</legend>
+            <label for="date">Elija una fecha: <input type="date" name="date" id="date"></label>
+
+            <br><br>
+
+            <label for="file">Elija un fichero: <input type="file" name="file" id="file"></label>
+        </fieldset>
+    </form>
+</body>
+
+</html>
