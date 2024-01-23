@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <fieldset>
+            <legend>Rellenar</legend>
+
+            <span>Conocimiento de idiomas</span>
+            <br><br>
+            <label for="espaniol"><input type="radio" name="idioma" id="espaniol"> Español</label>
+            <br>
+            <label for="ingles"><input type="radio" name="idioma" id="ingles"> Inglés</label>
+            <br>
+            <label for="aleman"><input type="radio" name="idioma" id="aleman"> Alemán</label>
+            <br>
+            <label for="frances"><input type="radio" name="idioma" id="frances"> Francés</label>
+            <br><br>
+
+            <span>Nivel:</span>
+            <br><br>
+            <select name="nivel" id="nivel">
+                <option value="bajo">Bajo</option>
+                <option value="medio">Medio</option>
+                <option value="alto">Alto</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Indique sus preferencias</legend>
+            <label for="maniana">
+                <input type="checkbox" name="maniana" id="maniana"> Mañana
+            </label>
+            
+            <br>
+            
+            <label for="tarde">
+                <input type="checkbox" name="tarde" id="tarde"> Tarde
+            </label>
+            
+            <br>
+            
+            <label for="indiferente">
+                <input type="checkbox" name="indiferente" id="indiferente"> Indiferente
+            </label>
+
+            <br><br>
+
+            <label for="date">Elija una fecha posible para empezar: 
+                <input type="date" name="date" id="date">
+            </label>
+        </fieldset>
+    </form>
+</body>
+
+</html>
