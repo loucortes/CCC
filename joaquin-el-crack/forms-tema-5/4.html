@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+
+<body>
+    <form action="" method="post">
+        <label for="name">Nombre: </label>
+        <input type="text" name="name" id="name" required autofocus>
+
+        <br><br>
+
+        <label for="email">Email: </label>
+        <input type="email" name="email" id="email" required>
+
+        <br><br>
+
+        <label for="url">Url: </label>
+        <input type="url" name="url" id="url" pattern="https://.*" placeholder="Escribe la URL de tu página" size="22">
+
+        <br><br>
+
+        <label for="date">Fecha: </label>
+        <input type="date" name="date" id="date">
+
+        <br><br>
+
+        <label for="time">Tiempo: </label>
+        <input type="time" name="time" id="time">
+
+        <br><br>
+
+        <label for="num">Número: </label>
+        <input type="number" name="num" id="num" min="0" max="30" value="0">
+
+        <br><br>
+
+        <label for="tel">Telefono: </label>
+        <input type="tel" name="tel" id="tel">
+
+        <br><br>
+
+        <input type="submit" value="Enviar información">
+    </form>
+</body>
+
+</html>
