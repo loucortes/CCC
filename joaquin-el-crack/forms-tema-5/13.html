@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function funny(input) {
+            input.addEventListener('focus', () => {
+                input.style.outline = 'none'
+                input.style.border = '2px solid #f00'
+            })
+
+            input.addEventListener('blur', () => {
+                input.style.border = ''
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <form action="">
+        <fieldset>
+            <legend>Datos personales</legend>
+
+            <label for="name">Nombre:</label>
+            <input type="text" name="name" id="name">
+
+            <br><br>
+
+            <label for="lastname">Apellidos:</label>
+            <input type="text" name="lastname" id="lastname">
+
+            <br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email">
+        </fieldset>
+        <fieldset>
+            <legend>Datos de registro</legend>
+
+            <label for="user">Usuario:</label>
+            <input type="text" name="user" id="user">
+
+            <br><br>
+
+            <label for="password">Contraseña:</label>
+            <input type="password" name="password" id="password">
+
+            <br><br>
+
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Reiniciar">
+        </fieldset>
+
+        <span></span>
+    </form>
+
+    <script>
+        const userInput = document.querySelector('#user')
+        const pwdInput = document.querySelector('#password')
+        const nameInput = document.querySelector('#name')
+
+        nameInput.addEventListener('change', (e) => {
+            document.querySelector('span').innerHTML = e.target.value
+        })
+
+        funny(userInput)
+        funny(pwdInput)
+    </script>
+</body>
+
+</html>
