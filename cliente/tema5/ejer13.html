@@ -48,21 +48,27 @@
         selec(user);
         selec(pwd);
 
-
-        fname.addEventListener("keydown", (e) => {
-            if (e.which >= 48 && e.which <= 90 || e.which == 32) {
-                span.innerHTML += e.key;
-            }
-
-            if (e.code == "Backspace") {
-                let name = span.innerHTML;
-                name = name.split("");
-                name.pop();
-                name = name.join("");
-
-                span.innerHTML = name;
-            }
+        
+        fname.addEventListener('input', (e) => {
+            document.querySelector('span').innerHTML = e.target.value
         })
+        
+        /* Another weak alternative */
+        
+                // fname.addEventListener("keydown", (e) => {
+                //     if (e.which >= 48 && e.which <= 90 || e.which == 32) {
+                //         span.innerHTML += e.key;
+                //     }
+        
+                //     if (e.code == "Backspace") {
+                //         let name = span.innerHTML;
+                //         name = name.split("");
+                //         name.pop();
+                //         name = name.join("");
+        
+                //         span.innerHTML = name;
+                //     }
+                // })
     </script>
 </body>
 
