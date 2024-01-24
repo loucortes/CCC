@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Validación</title>
+    <script>
+        function enviarDatos() {
+            const nombre = document.getElementById('nombre').value;
+            const apellidos = document.getElementById('apellidos').value;
+            const codigoPostal = document.getElementById('codigoPostal').value;
+            const dni = document.getElementById('dni').value;
+            const email = document.getElementById('email').value;
+
+            const regexDNI = /^[0-9]{8}[A-Za-z]$/;
+
+            const regexCodigoPostal = /^\d{5}$/;
+
+            const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!nombre || !apellidos || !codigoPostal || !dni || !email) {
+                alert('Todos los campos son obligatorios.');
+                return;
+            }
+
+            if (!regexCodigoPostal.test(codigoPostal)) {
+                alert('Código postal no válido.');
+                return;
+            }
+
+            if (!regexDNI.test(dni)) {
+                alert('DNI no válido.');
+                return;
+            }
+
+            if (!regexEmail.test(email)) {
+                alert('Email no válido.');
+                return;
+            }
+
+            alert('Datos válidos. Enviando formulario...');
+        }
+    </script>
+</head>
+
+<body>
+    <form id="miFormulario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <br>
+
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos" required>
+
+        <br>
+
+        <label for="codigoPostal">Código Postal:</label>
+        <input type="text" id="codigoPostal" name="codigoPostal" required>
+
+        <br>
+
+        <label for="dni">DNI:</label>
+        <input type="text" id="dni" name="dni" required>
+
+        <br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <br>
+
+        <input type="submit" value="Enviar datos">
+    </form>
+
+    <script>
+        document.getElementById('miFormulario').addEventListener('submit', enviarDatos)
+    </script>
+</body>
+
+</html>
