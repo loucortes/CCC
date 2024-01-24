@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" id="form">
+        <label for="name">Nombre:</label>
+        <input type="text" name="name" id="name">
+
+        <br><br>
+
+        <label for="lastname">Apellidos:</label>
+        <input type="text" name="lastname" id="lastname">
+
+        <br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <script>
+        const form = document.getElementById('form')
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+
+            const campoUno = document.getElementById('name').value
+            const campoDos = document.getElementById('lastname').value
+
+            if (campoUno === '' || campoUno === null) alert('El primer campo está vacío')
+            if (campoDos === '' || campoDos === null) alert('El segundo campo está vacío')
+        })
+    </script>
+</body>
+
+</html>
