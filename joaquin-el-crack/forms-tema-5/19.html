@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" id="form">
+        <input type="text" name="campoUno" id="campoUno">
+        <input type="text" name="campoDos" id="campoDos">
+
+        <br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <script>
+        const form = document.querySelector('#form')
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+
+            const campoUno = document.querySelector('#campoUno').value
+            const campoDos = document.querySelector('#campoDos').value
+
+            if (!campoUno) alert('El primer campo está vacío')
+            if (!campoDos) alert('El segundo campo está vacío')
+            if (!Number.isInteger(Number(campoDos))) alert('El segundo campo debe ser un entero')
+
+            alert('Enviado correctamente')
+        })
+    </script>
+</body>
+
+</html>
