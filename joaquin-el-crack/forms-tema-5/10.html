@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="name">Nombre </label>
+        <input type="text" name="name" id="name">
+
+        <br><br>
+
+        <label for="lastname">Apellidos </label>
+        <input type="text" name="lastname" id="lastname">
+
+        <br><br>
+
+        <label for="email">Correo electrónico </label>
+        <input type="email" name="email" id="email">
+
+        <br><br>
+
+        <label for="user">Nombre de usuario </label>
+        <input type="password" name="user" id="user">
+
+        <br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+    <script>
+        let form = document.querySelector("form");
+
+        form.addEventListener("submit", () => {
+            alert("En breve recibirá un correo en la dirección facilitada de confirmación de registro");
+        })
+
+    </script>
+</body>
+
+</html>
