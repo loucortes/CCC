@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+</head>
+
+<body>
+    <form id="formulario1" action="datos1.php" method="post">
+        <label for="nombre1">Nombre:</label>
+        <input type="text" id="nombre1" name="nombre1" required>
+
+        <br>
+
+        <label for="apellidos1">Apellidos:</label>
+        <input type="text" id="apellidos1" name="apellidos1" required>
+
+        <br>
+
+        <label for="ciudad1">Ciudad de Residencia:</label>
+        <input type="text" id="ciudad1" name="ciudad1" required>
+
+        <br>
+
+        <label for="provincia1">Provincia:</label>
+        <select id="provincia1" name="provincia1">
+            <option value="cantabria">Cantabría</option>
+            <option value="la-rioja">La Rioja</option>
+        </select>
+
+        <br>
+
+        <button type="submit">Enviar Datos</button>
+        <button type="reset">Reiniciar Formulario</button>
+    </form>
+
+    <form id="formulario2" action="datos1.php" method="post">
+        <label for="asignaturas">Asignaturas Preferidas:</label>
+        <select id="asignaturas" name="asignaturas">
+            <option value="DWE_Servidor">DWE Servidor</option>
+            <option value="DWE_Cliente">DWE Cliente</option>
+            <option value="Diseno">Diseño</option>
+            <option value="Despliegue">Despliegue</option>
+        </select>
+
+        <br>
+
+        <label for="explicacion">Explicación (máx. 300 caracteres):</label>
+        <textarea id="explicacion" name="explicacion" maxlength="300"></textarea>
+
+        <br>
+
+        <button type="submit">Enviar Datos</button>
+        <button type="reset">Reiniciar Formulario</button>
+    </form>
+
+    <script>
+        document.getElementById('formulario2').action = 'datos2.php';
+
+        document.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const formulario1Data = new FormData(document.getElementById('formulario1'));
+            const formulario2Data = new FormData(document.getElementById('formulario2'));
+
+            const datos = {};
+
+            formulario1Data.forEach((value, key) => {
+                datos[key] = value;
+            });
+
+            formulario2Data.forEach((value, key) => {
+                datos[key] = value;
+            });
+
+            console.log(datos);
+        });
+    </script>
+</body>
+
+</html>
