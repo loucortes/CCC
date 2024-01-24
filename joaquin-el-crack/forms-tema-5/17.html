@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="registroForm">
+        <label for="username">Nombre de Usuario:</label>
+        <input type="text" id="username" name="username" required>
+
+        <br>
+
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" required>
+
+        <br>
+
+        <label for="confirmPassword">Confirmar Contraseña:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+        <br>
+
+        <input type="submit" value="Registrarse">
+    </form>
+
+    <script>
+        document.getElementById('registroForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            if (!username || !password || !confirmPassword) {
+                alert('Por favor, completa todos los campos.');
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                alert('Las contraseñas no coinciden. Inténtalo de nuevo.');
+                return;
+            }
+
+            alert('Registro exitoso. Datos enviados al servidor.');
+        });
+    </script>
+</body>
+
+</html>
