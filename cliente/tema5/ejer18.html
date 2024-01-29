@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="user">Usuario: <input type="text" name="user" id="user"></label>
+        <br><br>
+        <label for="fname">Nombre: <input type="text" name="fname" id="fname"></label>
+        <br><br>
+        <label for="lname">Apellidos: <input type="text" name="lname" id="lname"></label>
+        <br><br>
+        <label for="email">Correo: <input type="email" name="email" id="email"></label>
+        <br><br>
+        <label for="pwd">Contraseña: <input type="password" name="pwd" id="pwd"></label>
+        <br><br>
+        <label for="pwd2">Repita la Contraseña: <input type="password" name="pwd2" id="pwd2"></label>
+        <br><br>
+        <label>Intereses: </label><br><br>
+        <label for="rock"><input type="checkbox" name="rock" id="rock" value="rock">Rock</label><br>
+        <label for="pop"><input type="checkbox" name="pop" id="pop" value="pop">Pop</label><br>
+        <label for="indie"><input type="checkbox" name="indie" id="indie" value="indie">Indie</label><br><br>
+        <label for="sexo">Sexo: </label>
+        <select name="sexo" id="sexo">
+            <option value=""></option>
+            <option value="male">Hombre</option>
+            <option value="female">Mujer</option>
+            <option value="other">Otro</option>
+        </select>
+        <br><br>
+        <input type="submit">
+        <input type="reset">
+    </form>
+
+    <script>
+        let form = document.querySelector("form");
+        let user = document.querySelector("#user");
+        let fname = document.querySelector("#fname");
+        let lname = document.querySelector("#lname");
+        let email = document.querySelector("#email");
+        let pwd = document.querySelector("#pwd");
+        let pwd2 = document.querySelector("#pwd2");
+        let intereses = document.querySelectorAll("input[type='checkbox']:checked");
+        let sexo = document.querySelector("#sexo");
+
+
+        form.addEventListener("submit", ()=>{
+            if(!user.value || !fname || !lname){
+                alert("Error! Usuario, Nombre o Apellidos están vacíos;");
+                return;
+            }
+
+            if(intereses.length === 0){
+                alert("Error! Debe seleccioar al menos un interés");
+                return;
+            }
+
+            if(pwd.value != pwd2 || !pwd || !pwd2){
+                alert("Error! Las contraseñas no son iguales o están vacías");
+                return;
+            }
+
+            if(!email || !sexo){
+                alert("El correo o sexo está vacío");
+                return;
+            }
+
+            console.log(user.value);
+            console.log(fname.value);
+            console.log(lname.value);
+            console.log(email.value);
+            console.log(pwd.value);
+            console.log(pwd2.value);
+            console.log(intereses.forEach(e=>console.log(e.value)));
+            console.log(sexo.value);
+
+        })
+    </script>
+</body>
+</html>
