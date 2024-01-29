@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="user">Usuario: <input type="text" name="user" id="user"></label>
+        <br><br>
+        <label for="pwd">Contraseña: <input type="password" name="pwd" id="pwd"></label>
+        <br><br>
+        <label for="pwd2">Repita la Contraseña: <input type="password" name="pwd2" id="pwd2"></label>
+        <br><br>
+        <input type="submit">
+    </form>
+
+    <script>
+        let form = document.querySelector("form");
+        let user = document.querySelector("#user");
+        let pwd = document.querySelector("#pwd");
+        let pwd2 = document.querySelector("#pwd2");
+
+         form.addEventListener("submit", (e)=>{
+            e.preventDefault();
+
+            if (user.value == "" || pwd.value == "" || pwd2.value == "") {
+                alert("One of the fields are empty");
+            }else {
+                pwd.value === pwd2.value ? alert("All good") : alert("The passwords don't match");
+            }
+        })
+    </script>
+</body>
+</html>
