@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="text1">Texto 1 <input type="text" name="text1" id="text1"></label>
+        <br><br>
+        <label for="text2">Texto 2 <input type="text" name="text2" id="text2"></label>
+        <br><br>
+        <input type="submit">
+    </form>
+
+    <script>
+        let form = document.querySelector("form");
+        let text1 = document.querySelector("#text1");
+        let text2 = document.querySelector("#text2");
+
+        form.addEventListener("submit", (e)=>{
+            e.preventDefault()
+            if(!text1.value || !text2.value){
+                alert("Alguno de los dos campos está vacío");
+                return;
+            }
+    
+            if(!Number.isInteger(Number(text2.value))){
+                alert("El segundo texto no es un número entero");
+                return;
+            }
+
+            alert("Todo joya");
+        })
+    </script>
+</body>
+</html>

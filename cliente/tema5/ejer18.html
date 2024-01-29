@@ -47,8 +47,9 @@
         let sexo = document.querySelector("#sexo");
 
 
-        form.addEventListener("submit", ()=>{
-            if(!user.value || !fname || !lname){
+        form.addEventListener("submit", (e)=>{
+            e.preventDefault()
+            if(!user.value || !fname.value || !lname.value){
                 alert("Error! Usuario, Nombre o Apellidos están vacíos;");
                 return;
             }
@@ -58,12 +59,12 @@
                 return;
             }
 
-            if(pwd.value != pwd2 || !pwd || !pwd2){
+            if(pwd.value != pwd2.value || !pwd.value || !pwd2.value){
                 alert("Error! Las contraseñas no son iguales o están vacías");
                 return;
             }
 
-            if(!email || !sexo){
+            if(!email.value || !sexo.value){
                 alert("El correo o sexo está vacío");
                 return;
             }
