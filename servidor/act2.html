@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mouse Events Example</title>
+  <style>
+    #target {
+      width: 200px;
+      height: 200px;
+      background-color: lightblue;
+      margin: 50px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="target">Hover over me!</div>
+
+<script>
+  const target = document.getElementById('target');
+
+  target.addEventListener('mouseenter', () => {
+    console.log('Mouse entered!');
+    target.style.backgroundColor = 'lightgreen';
+  });
+
+  target.addEventListener('mouseover', () => {
+    console.log('Mouse over!');
+    target.style.backgroundColor = 'lightcoral';
+  });
+
+  target.addEventListener('mouseleave', () => {
+    console.log('Mouse left!');
+    target.style.backgroundColor = 'lightblue';
+  });
+</script>
+
+</body>
+</html>
