@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="datos1.php" id="form1">
+        <label for="fname">NOmbre: <input type="text" name="fname" id="fname"></label><br><br>
+        <label for="lname">Apellidos: <input type="text" name="lname" id="lname"></label><br><br>
+        <label for="city">Ciudad de Residencia: <input type="text" name="city" id="city"></label><br><br>
+
+        <label for="province">Provincia:</label>
+        <select name="province" id="province">
+            <option value=""></option>
+            <option value="madrid">Madrid</option>
+            <option value="ba">Buenos Aires</option>
+        </select>
+
+        <input type="submit">
+        <input type="reset">
+
+    </form>
+
+    <form action="datos2.php" id="form2">
+        <label for="subjects">Asignaturas preferidas:</label><br>
+        <select name="subjects" id="subjects" size="6" multiple>
+            <option value="cliente">Cliente</option>
+            <option value="servidor">Servidor</option>
+            <option value="despliegue">Despliegue</option>
+            <option value="ingles">Inglés</option>
+            <option value="disenio">Diseño</option>
+            <option value="empresas">Empresas</option>
+        </select>
+        <br><br>
+        <label for="explicacion">Explica por qué:</label>
+        <textarea name="explicacion" id="explicacion" cols="30" rows="5"></textarea><br><br>
+        <input type="submit">
+        <input type="reset">
+    </form>
+
+    <script>
+        document.getElementById('formulario2').action = 'datos2.php';
+
+        document.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const formulario1Data = new FormData(document.querySelector("#form1"));
+            const formulario2Data = new FormData(document.querySelector("#form2"));
+
+            const datos = {};
+
+            formulario1Data.forEach((value, key) => {
+                datos[key] = value;
+            });
+
+            formulario2Data.forEach((value, key) => {
+                datos[key] = value;
+            });
+
+            console.log(datos);
+        });
+    </script>
+</body>
+</html>
