@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="fname">Nombre <input type="text" name="fname" id="fname"></label><br><br>
+        <label for="lname">Apellidos <input type="text" name="lname" id="lname"></label><br><br>
+        <label for="cp">Código Postal: <input type="number" name="cp" id="cp"></label><br><br>
+        <label for="dni">DNI: <input type="text" name="dni" id="dni"></label><br><br>
+        <label for="email">Email: <input type="email" name="email" id="email"></label><br><br>
+        <input type="submit">
+    </form>
+
+    <script>
+        let form = document.querySelector("form");
+        form.addEventListener("submit", (e)=>{
+            e.preventDefault();
+            let fname = document.querySelector("#fname").value;
+            let lname = document.querySelector("#lname").value;
+            let cp = document.querySelector("#cp").value;
+            let dni = document.querySelector("#dni").value;
+            let email = document.querySelector("#email").value;
+            
+
+            if (!fname || !lname || !cp || !dni || !email){
+                alert("Tiene algún campo vacío");
+                return;
+            }
+
+            
+            if(!/^\d{5}$/.test(cp)){
+                alert("El código postal no sigue el formato requerido");
+                return;
+            }
+            
+            if(!/^[0-9]{8}[A-Za-z]$/.test(dni)){
+                alert("El dni no sigue el formato requerido");
+                return;
+            }
+            
+            if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+                alert("El email no sigue el formato requerido");
+                return
+            }
+
+        })
+    </script>
+</body>
+</html>
