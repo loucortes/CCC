@@ -7,7 +7,7 @@
 </head>
 <body>
     <form action="datos1.php" id="form1">
-        <label for="fname">NOmbre: <input type="text" name="fname" id="fname"></label><br><br>
+        <label for="fname">Nombre: <input type="text" name="fname" id="fname"></label><br><br>
         <label for="lname">Apellidos: <input type="text" name="lname" id="lname"></label><br><br>
         <label for="city">Ciudad de Residencia: <input type="text" name="city" id="city"></label><br><br>
 
@@ -41,25 +41,27 @@
     </form>
 
     <script>
-        document.getElementById('formulario2').action = 'datos2.php';
+        document.getElementById('form2').action = 'datos2.php';
 
         document.addEventListener('submit', function (event) {
             event.preventDefault();
 
-            const formulario1Data = new FormData(document.querySelector("#form1"));
-            const formulario2Data = new FormData(document.querySelector("#form2"));
+            let form1 = new FormData(document.querySelector("#form1"));
+            let form2 = new FormData(document.querySelector("#form2"));
 
-            const datos = {};
+            let data = {};
 
-            formulario1Data.forEach((value, key) => {
-                datos[key] = value;
+            form1.forEach((value, key) => {
+                data[key] = value;
             });
 
-            formulario2Data.forEach((value, key) => {
-                datos[key] = value;
+            form2.forEach((value, key) => {
+                data[key] = value;
             });
 
-            console.log(datos);
+            for(key in data){
+                console.log(`${key}: ${data[key]}`);
+            }
         });
     </script>
 </body>
