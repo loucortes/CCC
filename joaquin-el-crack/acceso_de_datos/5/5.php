@@ -26,7 +26,6 @@ try {
     if ($conn->query($query_delete)) {
         echo "Alumno borrado correctamente<br>";
     }
-
 } catch (Exception $e) {
     echo $e->getMessage();
 }
