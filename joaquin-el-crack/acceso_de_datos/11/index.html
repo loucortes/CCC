@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+        body,
+        input,
+        select,
+        option {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="11.php" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" required>
+
+        <br><br>
+
+        <label for="lname1">Primer apellido:</label>
+        <input type="text" name="lname1" id="lname1" required>
+
+        <br><br>
+
+        <label for="lname2">Segundo apellido:</label>
+        <input type="text" name="lname2" id="lname2" required>
+
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
+
+        <br><br>
+
+        <label for="mod">Modalidad:</label>
+        <select name="mod" id="mod">
+            <option value="Online">Online</option>
+            <option value="Presencial">Presencial</option>
+        </select>
+
+        <br><br>
+
+        <label for="curso">Curso:</label>
+        <input type="number" name="curso" id="curso" min="1" max="2" required>
+
+        <br><br>
+
+        <label for="tutor">Tutor</label>
+        <select name="tutor" id="tutor">
+            <option value="Ester">Ester</option>
+            <option value="Ramón">Ramón</option>
+            <option value="Cristina">Cristina</option>
+        </select>
+
+        <br><br>
+
+        <input type="submit" value="Dar de alta">
+    </form>
+</body>
+
+</html>
