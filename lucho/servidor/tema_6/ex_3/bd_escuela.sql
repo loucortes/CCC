@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS bd_escuela;
+CREATE DATABASE IF NOT EXISTS db_escuela;
 
 USE bd_escuela;
 
