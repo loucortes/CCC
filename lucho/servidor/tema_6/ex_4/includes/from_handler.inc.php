@@ -19,6 +19,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $stmt->bind_param("ss", $fname, $cursos[$language]);
         $stmt->execute();
 
+        $stmt->close();
+        $conn->close();
         echo "El alta ha sido exitoso!";
     } catch (Exception $e) {
         die("Query failed: " . $e->getMessage());
