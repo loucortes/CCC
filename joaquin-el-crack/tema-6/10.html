@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>EJERCICIO 10</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+        body,
+        input,
+        select,
+        option,
+        button {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="boton" name="boton">Generar Lista</button>
+
+    <div id="lista"></div>
+
+    <script>
+        document.getElementById('boton').addEventListener('click', () => {
+            let listaDiv = document.getElementById('lista')
+
+            let ul = document.createElement('ul')
+
+            for (let i = 1; i <= 12; i++) {
+                let li = document.createElement('li')
+                li.textContent = 'Tipo ' + i
+                ul.appendChild(li)
+            }
+
+            listaDiv.appendChild(ul)
+        })
+    </script>
+
+</body>
+
+</html>
