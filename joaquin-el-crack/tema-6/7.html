@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+        body,
+        input,
+        select,
+        option,
+        button {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="d"></div>
+
+    <script>
+        function c() {
+            let div = document.getElementById('d');
+            let table = document.createElement('table');
+            let tbody = document.createElement('tbody');
+
+            let th1 = document.createElement('th');
+            th1.textContent = 'Columna 1';
+            let th2 = document.createElement('th');
+            th2.textContent = 'Columna 2';
+
+            let trHead = document.createElement('tr');
+            trHead.appendChild(th1);
+            trHead.appendChild(th2);
+            tbody.appendChild(trHead);
+
+            let datos = [
+                ['Valor 1', 'Valor 1'],
+                ['Valor 2', 'Valor 2']
+            ];
+
+            for (let i = 0; i < datos.length; i++) {
+                let tr = document.createElement('tr');
+                for (let j = 0; j < datos[i].length; j++) {
+                    let td = document.createElement('td');
+                    td.textContent = datos[i][j];
+                    tr.appendChild(td);
+                }
+                tbody.appendChild(tr);
+            }
+
+            table.appendChild(tbody);
+            div.appendChild(table);
+        }
+
+        window.onload = c;
+    </script>
+</body>
+
+</html>

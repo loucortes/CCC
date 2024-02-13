@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+        body,
+        input,
+        select,
+        option,
+        button {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <label for="name">Nombre</label>
+    <input type="text" name="name" id="name">
+
+    <br><br>
+
+    <label for="lname">Apellidos</label>
+    <input type="text" name="lname" id="lname">
+
+    <br><br>
+
+    <script>
+        function s() {
+            const s = document.createElement('select')
+
+            const options = ['si', 'no', 'ns/nc']
+
+            options.map((op) => {
+                let o = document.createElement('option')
+                o.textContent = op
+                o.value = op
+                s.appendChild(o)
+            })
+
+            document.body.appendChild(s)
+        }
+
+        window.onload = s
+    </script>
+</body>
+
+</html>
