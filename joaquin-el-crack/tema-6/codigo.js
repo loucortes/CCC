@@ -39,3 +39,10 @@ function add() {
 }
 
 document.getElementById('boton').addEventListener('click', add)
+
+// Ejercicio 5
+document.getElementById('img1').addEventListener('mouseover', () => {
+    const p = document.createElement('p')
+    p.textContent = '🍺'
+    document.body.appendChild(p)
+})
