@@ -38,6 +38,22 @@
 
             listaDiv.appendChild(ul)
         })
+
+        document.getElementById('boton').addEventListener('click', () => {
+            let listaDiv = document.getElementById('lista')
+
+            let ul = document.createElement('ul')
+
+            let elementos = ['Huevos', 'Pan', 'Yogures', 'Jamón', 'Tomates', 'Zumo', 'Lentejas']
+
+            for (let i = 0; i < elementos.length; i++) {
+                let li = document.createElement('li')
+                li.textContent = elementos[i]
+                ul.appendChild(li)
+            }
+
+            listaDiv.appendChild(ul)
+        })
     </script>
 
 </body>
