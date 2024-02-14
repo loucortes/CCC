@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+        body,
+        input,
+        select,
+        option,
+        button {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>¿En qué módulo se estudia el lenguaje JavaScript?</p>
+
+    <input type="text" name="i" id="i" placeholder="Responda aquí">
+
+    <input type="button" id="b" value="Comprueba la respuesta">
+
+    <script>
+        document.getElementById('b').addEventListener('click', () => {
+            if (document.getElementById('i').value == 'cliente') {
+                alert('bien')
+            } else {
+                document.getElementById('i').placeholder = 'Pruebe otra vez'
+            }
+        })
+    </script>
+</body>
+
+</html>
