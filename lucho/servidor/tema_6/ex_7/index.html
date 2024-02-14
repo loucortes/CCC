@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi biblioteca</title>
+</head>
+<body>
+    <h1>Mi biblioteca</h1>
+    <form action="./includes/form_handler.inc.php" method="post">
+            <table>
+            <tbody>
+                <tr>
+                    <td>Título del libro:</td>
+                    <td><input type="text" name="title" id="title"></td>
+                </tr>
+                <tr>
+                    <td>Autor</td>
+                    <td><input type="text" name="author" id="author"></td>
+                </tr>
+                <tr>
+                    <td>Editorial:</td>
+                    <td><input type="text" name="editorial" id="editorial"></td>
+                </tr>
+                <tr>
+                    <td>Año de publicación:</td>
+                    <td><input type="text" name="publication" id="publication"></td>
+                </tr>
+                <tr>
+                    <td>Idioma:</td>
+                    <td><input type="text" name="language" id="language"></td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <label for="sinopsis">Sinopsis del libro:</label><br>
+            <textarea name="sinopsis" id="sinopsis" cols="50" rows="10" placeholder="Escribe aquí la sinopsis del libro"></textarea>
+            <br><br>
+            <label>Revisa que todos los campos son correctos antes de pulsar el botón</label>
+            <br><br>
+            <input type="submit" value="Introducir el libro">
+        </form>
+</body>
+</html>
