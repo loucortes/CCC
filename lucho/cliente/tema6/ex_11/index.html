@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+ <html lang="es">
+    <head>
+         <meta charset="UTF-8">
+         <title>EJERCICIO 10</title>
+    </head>
+    <body>
+ 
+     <button id="boton" name="boton">Generar Lista</button>
+	 
+     <div id="lista"></div>
+	 
+     <script>
+        let list = document.querySelector("#lista");
+        let ul = document.createElement("ul");
+        let li = document.createElement("li");
+        let boton = document.querySelector("#boton");
+        let listaCompras = ["Huevos", "Pan", "Yogures", "Jamón", "Tomates", "Zumo", "Lentejas"];
+
+        boton.addEventListener("click", ()=>{
+            for(i = 0; i < listaCompras.length; i++){
+                li = document.createElement("li");
+                li.textContent = listaCompras[i];
+                ul.appendChild(li);
+            }
+            list.appendChild(ul);
+        })
+
+     </script>
+    </body>
+ </html>
