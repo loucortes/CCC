@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 8</title>
+</head>
+<body>
+    <label for="fname">Nombre: <input type="text" name="fname" id="fname"></label><br><br>
+    <label for="lname">Apellidos: <input type="text" name="lname" id="lname"></label><br><br>
+
+    <script>
+        function createSelect(){
+            let select = document.createElement("select");
+            let options = ["si", "no", "ns/nc"]; 
+            
+            options.forEach(opt =>{
+                let optionElement = document.createElement("option");
+                optionElement.value = opt;
+                optionElement.textContent = opt;
+                select.appendChild(optionElement);
+            });
+
+            document.body.appendChild(select)
+        };
+
+        window.onload = createSelect;
+    </script>
+</body>
+</html>

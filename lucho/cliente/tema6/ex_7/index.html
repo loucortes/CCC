@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 7</title>
+</head>
+<body>
+    <div></div>
+
+    <script>
+        let div = document.querySelector("div");
+        function createTable(value1, value2){
+            div.innerHTML = `
+            <table border="2">
+        <thead>
+            <tr>
+                <th>Columna 1</th>
+                <th>Columna 2</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>${value1}</td>
+                <td>${value2}</td>
+            </tr>
+            <tr>
+                <td>${value1}</td>
+                <td>${value2}</td>
+            </tr>
+        </tbody>
+    </table>
+            `;
+        }
+
+        window.onload = createTable("valor1", "valor2");
+    </script>
+</body>
+</html>

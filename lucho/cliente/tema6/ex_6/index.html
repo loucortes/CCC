@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 6</title>
+</head>
+<body>
+    <label name="answer">En qué módulo se estudia el lenguaje JavaScript?</label><br><br>
+    <input type="text" name="answer" id="anser" value="Responda aquí"><br>
+    <input type="button" value="Compruebe la Respuesta">
+
+    <script>
+        let button = document.querySelector("input[type=button]");
+        let input = document.querySelector("input[type=text]");
+        let h4 = document.createElement("h4");
+
+        button.addEventListener("click", ()=>{
+            if (input.value === "cliente") {
+                h4.textContent = "Correcto";
+            } else {
+                h4.textContent = "Incorrecto";
+                input.value = "Pruebe otra vez";
+            }
+
+            document.body.appendChild(h4);           
+        });
+    </script>
+</body>
+</html>

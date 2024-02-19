@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+ <html lang="es">
+    <head>
+         <meta charset="UTF-8">
+         <title>EJERCICIO 10</title>
+    </head>
+    <body>
+ 
+     <button id="boton" name="boton">Generar Lista</button>
+	 
+     <div id="lista"></div>
+	 
+     <script>
+        let list = document.querySelector("#lista");
+        let ul = document.createElement("ul");
+        let li = document.createElement("li");
+        let boton = document.querySelector("#boton");
+
+        boton.addEventListener("click", ()=>{
+            for(i = 1; i <= 12; i++){
+                li = document.createElement("li");
+                li.textContent = `Tipo ${i}`;
+                ul.appendChild(li);
+            }
+            list.appendChild(ul);
+        })
+
+     </script>
+    </body>
+ </html>
